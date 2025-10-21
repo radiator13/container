@@ -4,7 +4,7 @@ RUN apt-get update -y && \
     apt-get install -y --no-install-recommends git ca-certificates p7zip-full curl && \
     #curl -L -o clang.tar.gz https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/ad834e67b1105d15ef907f6255d4c96e8e733f57/clang-r547379.tar.gz && \
     #mkdir -p /tc && tar -xzf clang.tar.gz -C /tc && rm clang.tar.gz && \
-    curl -L -o tc.7z https://github.com/Mandi-Sa/clang/releases/download/amd64-kernel-arm_static-21/llvm21.0.0-binutils2.44_amd64-kernel-arm_static-20250609.7z && \
+    curl -L -o tc.7z https://github.com/Mandi-Sa/clang/releases/download/amd64-kernel-arm_static-22/llvm22.0.0-binutils2.44_amd64-kernel-arm_static-20251019.7z && \
     7z l tc.7z && 7z x tc.7z -otc && rm tc.7z &&\
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
