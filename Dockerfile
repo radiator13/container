@@ -1,4 +1,4 @@
-FROM ubuntu:oracular AS initial
+FROM ubuntu:questing AS initial
 WORKDIR /
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends git ca-certificates p7zip-full curl && \
@@ -8,7 +8,7 @@ RUN apt-get update -y && \
     7z l tc.7z && 7z x tc.7z -otc && rm tc.7z &&\
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-FROM ubuntu:oracular
+FROM ubuntu:questing
 WORKDIR /build
 COPY --from=initial /tc /build/tc
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
