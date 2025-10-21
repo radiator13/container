@@ -12,7 +12,7 @@ FROM ubuntu:questing
 WORKDIR /build
 COPY --from=initial /tc /build/tc
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
-    apt-get install -y --no-install-recommends sed sudo cpio curl tar zstd libssl-dev openssl libxml2 \
+    apt-get install -y --no-install-recommends sed sudo cpio curl tar zstd libssl-dev openssl libxml2-16 libxml2-utils libxml2-dev \
     which bc gawk perl diffutils locales make python3 xz-utils bison flex git unzip ca-certificates libc6-dev libgcc-14-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /var/lib/apt/archives/* /usr/share/man/* && \
     echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
