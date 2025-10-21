@@ -5,7 +5,7 @@ RUN apt-get update -y && \
     #curl -L -o clang.tar.gz https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/ad834e67b1105d15ef907f6255d4c96e8e733f57/clang-r547379.tar.gz && \
     #mkdir -p /tc && tar -xzf clang.tar.gz -C /tc && rm clang.tar.gz && \
     curl -L -o tc.7z https://github.com/Mandi-Sa/clang/releases/download/amd64-kernel-arm_static-22/llvm22.0.0-binutils2.44_amd64-kernel-arm_static-20251019.7z && \
-    bsdtar -xf tc.7z -C tc && rm tc.7z &&\
+    mkdir tc && bsdtar -xf tc.7z -C tc && rm tc.7z &&\
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 FROM ubuntu:questing
