@@ -1,0 +1,18 @@
+name:  Docker
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build:
+   runs-on: ubuntu-24.04
+   steps:
+      - uses: actions/checkout@main
+      - uses: elgohr/Publish-Docker-Github-Action@main
+        with:
+          name: radiator13/13
+          username: ${{ secrets.NAME }}
+          password: ${{ secrets.PASS }}
+          dockerfile: Dockerfile
+          buildoptions: --force-rm --compress --no-cache --squash
+          tags: "latest"
